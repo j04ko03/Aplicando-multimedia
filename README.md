@@ -2,8 +2,6 @@
 
 An interactive web application that lets you create virtual breakfast dishes from different cuisines with drag-and-drop ingredients!
 
-![Preview](https://via.placeholder.com/800x400.png?text=Breakfast+Cuisine+Creator+Preview) <!-- Add real screenshot here -->
-
 ## Features ✨
 
 - **Dual Cuisine Selection**  
