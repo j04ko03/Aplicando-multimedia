@@ -1,0 +1,333 @@
+/* Updated Color Palette */
+:root {
+    --main-bg: #fff8e1; /* Light cream */
+    --accent-1: #ff7043; /* Vibrant orange */
+    --accent-2: #ffca28; /* Golden yellow */
+    --accent-3: #8bc34a; /* Fresh green */
+    --text-dark: #4e342e; /* Dark brown */
+    --text-light: #ffffff; /* White */
+}
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--main-bg);
+    color: var(--text-dark);
+    transition: background 0.5s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--accent-1);
+}
+
+/* Title Styles */
+h1, h3 {
+    color: var(--accent-1);
+    background: var(--text-light); /* White fill */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: #fff8e1 0px 0px 10px, #ff7043 0px 0px 20px, #ffca28 0px 0px 30px;
+}
+
+/* Main Page Styles */
+.main-page {
+    background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent-1) 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.option {
+    padding: 30px 50px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background: var(--accent-1);
+}
+
+.option:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    background: var(--accent-2);
+}
+
+.option:hover h2 {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Recipe Pages Styles */
+.occidental-page {
+    background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-3) 100%);
+    min-height: 100vh;
+}
+
+.oriental-page {
+    background: linear-gradient(135deg, var(--accent-2) 0%, var(--accent-3) 100%);
+    min-height: 100vh;
+}
+
+/* Recipe Pages Title Styles */
+.oriental-page h1, .oriental-page h3,
+.occidental-page h1, .occidental-page h3 {
+    color: var(--text-light); /* White text for better contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for readability */
+    background: none; /* Remove background clip effect */
+    -webkit-text-fill-color: unset; /* Ensure text is filled */
+}
+
+.recipe-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.plate-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin: 0 auto; /* Center the container itself */
+    border: 2px dashed transparent; /* Add a visual cue for drop area */
+    transition: border-color 0.3s ease;
+}
+
+.plate-container.dragover {
+    border-color: var(--accent-3);
+}
+
+#plate, #bowl {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 1s ease;
+    pointer-events: none; /* Allow drop events to pass through */
+    z-index: 1;
+}
+
+.ingredients-on-plate {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.ingredients-list {
+    max-width: 400px;
+}
+
+.ingredient {
+    padding: 15px;
+    margin: 10px 0;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.ingredient:hover {
+    transform: scale(1.05);
+    background-color: var(--accent-3);
+    color: var(--text-light);
+}
+
+.ingredient.selected {
+    background-color: var(--accent-2);
+    color: var(--text-dark);
+}
+
+.ingredient-emoji {
+    font-size: 2rem;
+    margin: 5px;
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(0); }
+    80% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.rotate {
+    animation: rotate 1s linear;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: var(--accent-3);
+    color: var(--text-light);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.quote {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Wave Effects */
+.wave-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+    background-size: 50% 100px;
+}
+
+.wave-back {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23667eea" opacity=".25"/></svg>');
+    animation: wave 15s linear infinite;
+    z-index: 1;
+}
+
+.wave-middle {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23667eea" opacity=".5"/></svg>');
+    animation: wave 10s linear infinite reverse;
+    z-index: 2;
+}
+
+.wave-front {
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23667eea"/></svg>');
+    animation: wave 7s linear infinite;
+    z-index: 3;
+}
+
+@keyframes wave {
+    0% { transform: translateX(0) translateZ(0) scaleY(1); }
+    50% { transform: translateX(-25%) translateZ(0) scaleY(0.9); }
+    100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+}
+
+/* Ripple Effect */
+.ripple {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 1s linear;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(10);
+        opacity: 0;
+    }
+}
+
+const plateContainer = document.querySelector('.plate-container');
+const plateOrBowl = document.getElementById('plate') || document.getElementById('bowl');
+
+// Usar plateContainer para los eventos de drag & drop
+plateContainer.addEventListener('dragover', function(e) {
+    e.preventDefault();
+    this.classList.add('dragover');
+});
+plateContainer.addEventListener('dragleave', function() {
+    this.classList.remove('dragover');
+});
+plateContainer.addEventListener('drop', function(e) {
+    e.preventDefault();
+    this.classList.remove('dragover');
+
+    const ingredientName = e.dataTransfer.getData('text/plain');
+    const ingredientElement = document.querySelector(`.ingredient[data-name="${ingredientName}"]`);
+    const emoji = ingredientElement.textContent.match(/\p{Emoji}/u)[0];
+
+    if (selectedIngredients.includes(ingredientName) || selectedIngredients.length >= 5) {
+        return;
+    }
+
+    selectedIngredients.push(ingredientName);
+    ingredientElement.classList.add('selected');
+
+    const emojiElement = document.createElement('div');
+    emojiElement.className = 'ingredient-emoji';
+    emojiElement.textContent = emoji;
+    emojiElement.setAttribute('data-name', ingredientName);
+
+    // Coordenadas relativas al contenedor
+    const rect = plateContainer.getBoundingClientRect();
+    const x = e.clientX - rect.left - 20;
+    const y = e.clientY - rect.top - 20;
+    emojiElement.style.position = 'absolute';
+    emojiElement.style.left = `${x}px`;
+    emojiElement.style.top = `${y}px`;
+
+    ingredientsContainer.appendChild(emojiElement);
+
+    addSound.currentTime = 0;
+    addSound.play();
+
+    if (selectedIngredients.length === 5) {
+        rotateSound.currentTime = 0;
+        rotateSound.play();
+        plateOrBowl.classList.add('rotate');
+        setTimeout(() => {
+            plateOrBowl.classList.remove('rotate');
+        }, 1000);
+    }
+});
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oriental Breakfast</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="oriental-page">
+    <div class="container">
+        <h1>Create Your Oriental Breakfast</h1>
+        <p class="quote">"A good breakfast fuels the soul."</p>
+        
+        <div class="recipe-area">
+            <div class="plate-container">
+                <img src="/images/bowl.png" alt="Bowl" id="bowl">
+                <div class="ingredients-on-plate" id="ingredients-container"></div>
+            </div>
+            
+            <div class="ingredients-list">
+                <h3>Select up to 5 ingredients:</h3>
+                <div class="ingredient" data-name="Rice" draggable="true">🍚 Rice</div>
+                <div class="ingredient" data-name="Miso Soup" draggable="true">🍲 Miso Soup</div>
+                <div class="ingredient" data-name="Fish" draggable="true">🐟 Fish</div>
+                <div class="ingredient" data-name="Tofu" draggable="true">🧈 Tofu</div>
+                <div class="ingredient" data-name="Seaweed" draggable="true">🌿 Seaweed</div>
+                <div class="ingredient" data-name="Egg" draggable="true">🥚 Egg</div>
+                <div class="ingredient" data-name="Kimchi" draggable="true">🥬 Kimchi</div>
+                <div class="ingredient" data-name="Pickles" draggable="true">🥒 Pickles</div>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="addSound" src="/sounds/pop sound.mp3"></audio>
+    <audio id="rotateSound" src="/sounds/ui positive.wav"></audio>
+    
+    <footer>
+        <p>Made with ❤️ by Breakfast Enthusiasts</p>
+    </footer>
+    <script src="/js/script.js"></script>
+</body>
+</html>

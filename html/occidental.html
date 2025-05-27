@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Occidental Breakfast</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="occidental-page">
+    <div class="container">
+        <h1>Create Your Occidental Breakfast</h1>
+        <p class="quote">"Breakfast is the start of something great."</p>
+        <div class="recipe-area">
+            <div class="plate-container">
+                <img src="/images/plate.png" alt="Plate" id="plate">
+                <div class="ingredients-on-plate" id="ingredients-container"></div>
+            </div>
+            
+            <div class="ingredients-list">
+                <h3>Select up to 5 ingredients:</h3>
+                <div class="ingredient" data-name="Eggs" draggable="true">🥚 Eggs</div>
+                <div class="ingredient" data-name="Bacon" draggable="true">🥓 Bacon</div>
+                <div class="ingredient" data-name="Toast" draggable="true">🍞 Toast</div>
+                <div class="ingredient" data-name="Pancakes" draggable="true">🥞 Pancakes</div>
+                <div class="ingredient" data-name="Sausage" draggable="true">🌭 Sausage</div>
+                <div class="ingredient" data-name="Cheese" draggable="true">🧀 Cheese</div>
+                <div class="ingredient" data-name="Avocado" draggable="true">🥑 Avocado</div>
+                <div class="ingredient" data-name="Tomato" draggable="true">🍅 Tomato</div>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="addSound" src="/sounds/pop sound.mp3"></audio>
+    <audio id="rotateSound" src="/sounds/ui positive.wav"></audio>
+    
+    <footer>
+        <p>Made with ❤️ by Breakfast Enthusiasts</p>
+    </footer>
+    <script src="/js/script.js"></script>
+</body>
+</html>
